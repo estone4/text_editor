@@ -1,6 +1,6 @@
 from fpdf import FPDF
 import menus.menu_sys
-import startup.initialize as startup
+import startup
 
 # Determine OS
 if "win" == startup.sys.platform[:3]:
