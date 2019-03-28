@@ -1,3 +1,7 @@
+import pip
+
+pip install -r requirements.txt
+
 from fpdf import FPDF
 import menus.menu_sys
 import startup.initialize as startup
