@@ -45,7 +45,7 @@ formatmenu.add_separator()
 formatmenu.add_radiobutton(label='Normal',command=menu_functions.normal)
 formatmenu.add_radiobutton(label='Bold',command=menu_functions.bold)
 formatmenu.add_radiobutton(label='Underline',command=menu_functions.underline)
-formatmenu.add_radiobutton(label='italic',command=menu_functions.italic)
+formatmenu.add_radiobutton(label='Italic',command=menu_functions.italic)
 
 # Personalize menu
 startup.menu.add_cascade(label="Personalize",menu=personalizemenu)
