@@ -10,12 +10,6 @@ elif "darwin" in startup.sys.platform:
 else:
     startup.style.theme_use('clam')
 
-# # Determine python version
-# if "2.7" in startup.initialize.sys.version:
-#     textPad = ScrolledText(root, width=100, height=80)
-# elif "3.6" in startup.initialize.sys.version or "3.7" in startup.initialize.sys.version:
-#     textPad = startup.initialize.tkinter.scrolledtext.ScrolledText(startup.initialize.root, width=100, height=80)
-
 bg = startup.style.lookup("TLabel", "background")
 startup.root.configure(bg=bg)
 
