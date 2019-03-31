@@ -48,6 +48,7 @@ def font_chooser(): # Does not save changes to .txt file.
         font['family'] = font['family'].replace(' ', '\ ')
     print(font)
     startup.textPad.config(font = ("%(family)s %(size)i %(weight)s %(slant)s" % font))
+    return font
 
 def font_color():
     (triple,color) = startup.askcolor()
