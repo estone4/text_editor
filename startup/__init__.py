@@ -5,7 +5,7 @@ import sys
 
 # Has not been tested with Python2 since refactor.
 # TODO: Test with Python2
-if "2.7" in sys.version:
+if 2 == sys.version_info.major:
     import Tkinter
     from Tkinter import *
     from tkFileDialog import askopenfile, asksaveasfile
@@ -13,7 +13,7 @@ if "2.7" in sys.version:
     from tkColorChooser import askcolor
     import tkMessageBox as messagebox
     from ttk import Style
-elif "3.6" in sys.version or "3.7" in sys.version:
+elif 3 == sys.version_info.major:
     import tkinter
     from tkinter import *
     from tkinter.colorchooser import askcolor
