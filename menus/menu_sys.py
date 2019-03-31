@@ -2,6 +2,7 @@ import tkinter
 from tkinter import Menu, Tk
 from tkinter.ttk import Style
 from functions import menu_functions
+from functions import export_pdf
 import startup
 
 filemenu = Menu(startup.menu)
@@ -11,13 +12,15 @@ fontmenu = Menu(startup.root)
 formatmenu = Menu(startup.menu)
 personalizemenu = Menu(startup.root)
 helpmenu = Menu(startup.menu)
+exportmenu = Menu(filemenu)
+
 # File menu
 startup.menu.add_cascade(label="File", menu=filemenu)
 filemenu.add_command(label="New", command=menu_functions.dummy_command)
 filemenu.add_command(label="Open...", command=menu_functions.open_command)
 filemenu.add_command(label="Save", command=menu_functions.save_command)
 filemenu.add_separator()
-# filemenu.add_cascade(label="Export", menu=exportmenu)
+filemenu.add_cascade(label="Export", menu=exportmenu)
 filemenu.add_separator()
 filemenu.add_command(label="Exit", command=menu_functions.exit_command)
 
@@ -54,4 +57,7 @@ personalizemenu.add_command(label="Background...", command=menu_functions.backgr
 # Help menu
 startup.menu.add_cascade(label="Help", menu=helpmenu)
 helpmenu.add_command(label="About...", command=menu_functions.about_command)
+
+# Export submenu
+exportmenu.add_command(label="PDF", command=export_pdf.export_pdf)
 # End of menu

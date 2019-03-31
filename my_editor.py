@@ -1,4 +1,3 @@
-from fpdf import FPDF
 import menus.menu_sys
 import startup
 
@@ -12,14 +11,6 @@ else:
 
 bg = startup.style.lookup("TLabel", "background")
 startup.root.configure(bg=bg)
-
-# TODO: implement export to pdf functionality
-def export_pdf():
-    pdf = FPDF()
-    pdf.add_page()
-    pdf.set_font(font['family'], size=font['size'])
-    pdf.cell(200, 10, text=textPad.get('1.0', END+'-1c'))
-    pdf.output(asksaveasfile(mode='w'))
 #-------------------------------------------------------------------------------
 
 startup.root.config(menu=startup.menu)
