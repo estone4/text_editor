@@ -127,3 +127,6 @@ dmypy.json
 
 # Mac specific files
 .DS_Store
+
+# Testing
+*.pdf
