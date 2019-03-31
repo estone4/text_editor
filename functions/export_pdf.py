@@ -1,8 +1,7 @@
 import fpdf
 from functions.menu_functions import font_chooser
 import startup
-# TODO: wrap text in pdf
-# TODO: allow user to specify file name
+
 def export_pdf():
     font = font_chooser()
     print(font)
