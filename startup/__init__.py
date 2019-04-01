@@ -4,19 +4,20 @@ import sys
 
 from tkfontchooser import askfont
 
+print("Found Python version: ", sys.version_info)
 # Has not been tested with Python2 since refactor.
 # TODO: Test with Python2
 if 2 == sys.version_info.major:
-    import Tkinter
-    from Tkinter import *
+    import Tkinter as tk
+    from Tkinter import Tk
     from tkFileDialog import askopenfile, asksaveasfile
     from ScrolledText import *
     from tkColorChooser import askcolor
     import tkMessageBox as messagebox
     from ttk import Style
 elif 3 == sys.version_info.major:
-    import tkinter
-    from tkinter import *
+    import tkinter as tk
+    from tkinter import Tk
     from tkinter.colorchooser import askcolor
     from tkinter.filedialog import askopenfile, asksaveasfile
     import tkinter.messagebox as messagebox
@@ -25,11 +26,11 @@ elif 3 == sys.version_info.major:
 
 root = Tk(className="Just another Text Editor")
 style = Style(root)
-menu = Menu(root)
+menu = tk.Menu(root)
 root.config(menu=menu)
 
 # Determine python version
-if "2.7" in sys.version:
+if 2 == sys.version_info.major:
     textPad = ScrolledText(root, width=100, height=80)
-elif "3.6" in sys.version or "3.7" in sys.version:
+elif 3 == sys.version_info.major:
     textPad = tkinter.scrolledtext.ScrolledText(root, width=100, height=80)

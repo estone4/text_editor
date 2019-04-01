@@ -1,6 +1,11 @@
-import tkinter
-from tkinter import Menu, Tk
-from tkinter.ttk import Style
+import sys
+
+if 2 == sys.version_info.major:
+    from Tkinter import Menu, Tk
+    from ttk import Style
+elif 3 == sys.version_info.major:
+    from tkinter import Menu, Tk
+    from tkinter.ttk import Style
 
 from functions import menu_functions
 from functions import export_pdf
