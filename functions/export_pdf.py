@@ -1,4 +1,5 @@
 import fpdf
+
 from functions.menu_functions import font_chooser
 import startup
 

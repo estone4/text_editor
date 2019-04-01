@@ -1,6 +1,7 @@
 import tkinter
 from tkinter import Menu, Tk
 from tkinter.ttk import Style
+
 from functions import menu_functions
 from functions import export_pdf
 import startup

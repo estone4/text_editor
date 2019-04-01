@@ -1,7 +1,8 @@
 # This file intentionally left blank
 import datetime
-from tkfontchooser import askfont
 import sys
+
+from tkfontchooser import askfont
 
 # Has not been tested with Python2 since refactor.
 # TODO: Test with Python2
