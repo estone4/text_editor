@@ -4,9 +4,8 @@ import sys
 
 from tkfontchooser import askfont
 
-print("Found Python version: ", sys.version_info)
-# Has not been tested with Python2 since refactor.
-# TODO: Test with Python2
+print("Found Python version: {}.{}.{}".format(sys.version_info.major, sys.version_info.minor, sys.version_info.micro))
+
 if 2 == sys.version_info.major:
     import Tkinter as tk
     from Tkinter import Tk
