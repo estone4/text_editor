@@ -1,10 +1,9 @@
-# This file intentionally left blank
 import datetime
 import sys
 
 from tkfontchooser import askfont
 
-print("Found Python version: {}.{}.{}".format(sys.version_info.major, sys.version_info.minor, sys.version_info.micro))
+print("Found Python version: {0}.{1}.{2}".format(sys.version_info.major, sys.version_info.minor, sys.version_info.micro))
 
 if 2 == sys.version_info.major:
     import Tkinter as tk
