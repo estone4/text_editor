@@ -1,15 +1,14 @@
 import sys
 
-if 2 == sys.version_info.major:
-    from Tkinter import Menu, Tk
-    from ttk import Style
-elif 3 == sys.version_info.major:
-    from tkinter import Menu, Tk
-    from tkinter.ttk import Style
-
 from functions import menu_functions
 from functions import export_pdf
 import startup
+
+if 2 == sys.version_info.major:
+    from Tkinter import Menu
+elif 3 == sys.version_info.major:
+    from tkinter import Menu
+
 
 filemenu = Menu(startup.menu)
 modifymenu = Menu(startup.root)
@@ -36,7 +35,7 @@ modifymenu.add_command(label="Copy", command = menu_functions.copy)
 modifymenu.add_command(label="Paste", command=menu_functions.paste)
 modifymenu.add_separator()
 modifymenu.add_command(label = "Clear selection", command = menu_functions.clear)
-modifymenu.add_command(label = "Clear all", command = menu_functions.clearall)
+modifymenu.add_command(label = "Clear all", command = menu_functions.clear_all)
 
 # Insert menu
 startup.menu.add_cascade(label="Insert",menu= insertmenu)
