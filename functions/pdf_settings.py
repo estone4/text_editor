@@ -9,7 +9,12 @@ def export_pdf():
     print(font)
     pdf = fpdf.FPDF()
     pdf.add_page()
-    pdf.set_font(font['family'], size=font['size'])
+    try:
+        pdf.set_font(font['family'], size=font['size'])
+    except RuntimeError:
+        startup.messagebox.showerror(title="ERROR", message="Unsupported font.\nPlease select a different font")
+    except AttributeError:
+        print("Attribute not found")
     pdf.multi_cell(190, 10, txt=startup.textPad.get('1.0', startup.tk.END+'-1c'))
     file = startup.asksaveasfile(mode='wb')
     pdf.output(name=file.name, dest='F').encode('latin-1')
