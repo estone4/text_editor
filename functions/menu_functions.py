@@ -53,6 +53,7 @@ def bold():
 def font_chooser():  # Does not save changes to .txt file.
     font = startup.askfont(startup.root)
     if font:
+        # noinspection PyPep8
         font['family'] = font['family'].replace(' ', '\ ')
     print(font)
     startup.textPad.config(font=("%(family)s %(size)i %(weight)s %(slant)s" % font))

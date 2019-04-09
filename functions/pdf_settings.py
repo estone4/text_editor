@@ -14,9 +14,9 @@ def export_pdf():
     except RuntimeError:
         startup.messagebox.showerror(title="ERROR", message="Unsupported font.\nPlease select a different font.")
     pdf.multi_cell(190, 10, txt=startup.textPad.get('1.0', startup.tk.END+'-1c'))
-    try:
-        file = startup.asksaveasfile(mode='wb')
+    file = startup.asksaveasfile(mode='wb')
+    if file is not None:
         pdf.output(name=file.name, dest='F').encode('latin-1')
-    except Exception as e:
-        startup.messagebox.showerror(title="File Error", message="No file selected.\n" + str(e))
+    else:
+        startup.messagebox.showerror(title="File Error", message="No file selected.")
 
