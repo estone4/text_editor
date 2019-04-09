@@ -9,7 +9,6 @@ if 2 == sys.version_info.major:
 elif 3 == sys.version_info.major:
     from tkinter import Menu
 
-
 file_menu = Menu(startup.menu)
 modify_menu = Menu(startup.root)
 insert_menu = Menu(startup.root)
@@ -30,15 +29,15 @@ file_menu.add_separator()
 file_menu.add_command(label="Exit", command=menu_functions.exit_command)
 
 # Modify menu
-startup.menu.add_cascade(label="Modify", menu = modify_menu)
-modify_menu.add_command(label="Copy", command = menu_functions.copy)
+startup.menu.add_cascade(label="Modify", menu=modify_menu)
+modify_menu.add_command(label="Copy", command=menu_functions.copy)
 modify_menu.add_command(label="Paste", command=menu_functions.paste)
 modify_menu.add_separator()
-modify_menu.add_command(label ="Clear selection", command = menu_functions.clear)
-modify_menu.add_command(label ="Clear all", command = menu_functions.clear_all)
+modify_menu.add_command(label="Clear selection", command=menu_functions.clear)
+modify_menu.add_command(label="Clear all", command=menu_functions.clear_all)
 
 # Insert menu
-startup.menu.add_cascade(label="Insert", menu= insert_menu)
+startup.menu.add_cascade(label="Insert", menu=insert_menu)
 insert_menu.add_command(label="Date", command=menu_functions.date)
 insert_menu.add_command(label="Line", command=menu_functions.line)
 
@@ -47,7 +46,7 @@ startup.menu.add_cascade(label="Font", menu=font_menu)
 font_menu.add_command(label="Choose font", command=menu_functions.font_chooser)
 
 # Format menu
-startup.menu.add_cascade(label="Format", menu = format_menu)
+startup.menu.add_cascade(label="Format", menu=format_menu)
 format_menu.add_command(label="Color...", command=menu_functions.font_color)
 format_menu.add_separator()
 format_menu.add_radiobutton(label='Normal', command=menu_functions.normal)

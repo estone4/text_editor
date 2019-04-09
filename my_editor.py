@@ -11,7 +11,7 @@ else:
 
 bg = startup.style.lookup("TLabel", "background")
 startup.root.configure(bg=bg)
-#-------------------------------------------------------------------------------
+# -------------------------------------------------------------------------------
 
 startup.root.config(menu=startup.menu)
 

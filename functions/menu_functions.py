@@ -28,7 +28,7 @@ def save_command():
 
 
 def exit_command():
-    if startup.messagebox.askokcancel("Quit", "Do you really want to quit?"):
+    if startup.messagebox.askokcancel(title="Quit", message="Do you really want to quit?"):
         startup.root.destroy()
 
 
@@ -47,20 +47,21 @@ def line():
 
 # Font functions
 def bold():
-    startup.textPad.config(font = ("Arial", 10, "bold"))
+    startup.textPad.config(font=("Arial", 10, "bold"))
 
 
 def font_chooser():  # Does not save changes to .txt file.
     font = startup.askfont(startup.root)
     if font:
+        # noinspection PyPep8
         font['family'] = font['family'].replace(' ', '\ ')
     print(font)
-    startup.textPad.config(font = ("%(family)s %(size)i %(weight)s %(slant)s" % font))
+    startup.textPad.config(font=("%(family)s %(size)i %(weight)s %(slant)s" % font))
     return font
 
 
 def font_color():
-    (triple,color) = startup.askcolor()
+    (triple, color) = startup.askcolor()
     if color:
         startup.textPad.config(foreground=color)
 
@@ -88,8 +89,8 @@ def paste():
     try:
         teext = startup.textPad.selection_get(selection='CLIPBOARD')
         startup.textPad.insert(startup.tkinter.INSERT, teext)
-    except:
-        startup.messagebox.showerror("Error","The clipboard is empty!")
+    except Exception as e:
+        startup.messagebox.showerror(title="Error", message="The clipboard is empty!\n" + str(e))
 
 
 def clear():
@@ -97,13 +98,13 @@ def clear():
 
 
 def clear_all():
-    startup.textPad.delete(1.0 , startup.tkinter.END)
+    startup.textPad.delete(1.0, startup.tkinter.END)
 # -------------------------------------------------------------------------------
 
 
 # Background functions
 def background():
-    (triple,color) = startup.askcolor()
+    (triple, color) = startup.askcolor()
     if color:
         startup.textPad.config(background=color)
 # -------------------------------------------------------------------------------
