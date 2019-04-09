@@ -34,8 +34,8 @@ startup.menu.add_cascade(label="Modify", menu = modify_menu)
 modify_menu.add_command(label="Copy", command = menu_functions.copy)
 modify_menu.add_command(label="Paste", command=menu_functions.paste)
 modify_menu.add_separator()
-modify_menu.add_command(label ="Clear selection", command = menu_functions.clear)
-modify_menu.add_command(label ="Clear all", command = menu_functions.clear_all)
+modify_menu.add_command(label="Clear selection", command = menu_functions.clear)
+modify_menu.add_command(label="Clear all", command = menu_functions.clear_all)
 
 # Insert menu
 startup.menu.add_cascade(label="Insert", menu= insert_menu)
